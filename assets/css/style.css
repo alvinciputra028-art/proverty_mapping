@@ -1,0 +1,417 @@
+html,
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #ecf0f5;
+}
+
+.app-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* --- SIDEBAR UMUM (TEMA ADMIN LOKAL) --- */
+#sidebar {
+    width: 360px;
+    min-width: 360px;
+    height: 100%;
+    background-color: #ffffff;
+    border-right: 1px solid #ccc;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+#sidebar h2 {
+    margin-top: 0;
+    font-size: 1.4rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #27ae60;
+    padding-bottom: 10px;
+}
+
+#sidebar h4 {
+    margin: 15px 0 5px 0;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+#map {
+    flex-grow: 1;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --- MODIFIER TEMA SUPER ADMIN --- */
+body.theme-super #sidebar {
+    width: 380px;
+    min-width: 380px;
+}
+
+body.theme-super #sidebar h2 {
+    border-bottom: 3px solid #8e44ad;
+}
+
+body.theme-super #sidebar h4 {
+    border-left: 3px solid #8e44ad;
+    padding-left: 8px;
+}
+
+body.theme-super .popup-title {
+    color: #8e44ad;
+}
+
+body.theme-super .sidebar-btn {
+    background-color: #8e44ad;
+}
+
+body.theme-super .sidebar-btn:hover {
+    background-color: #732d91;
+}
+
+body.theme-super .btn-edit,
+body.theme-super .btn-delete {
+    width: 100%;
+}
+
+body.theme-super .btn-logout {
+    margin-top: 20px;
+}
+
+/* --- LEAFLET POPUP --- */
+.popup-content {
+    line-height: 1.6;
+    min-width: 260px;
+    max-width: 380px;
+}
+
+.popup-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 8px;
+    padding-bottom: 5px;
+}
+
+/* --- TOMBOL --- */
+.btn-action {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.btn-info {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.btn-secondary {
+    background-color: #7f8c8d;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+}
+
+.btn-history {
+    background-color: #8e44ad;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.btn-training {
+    background-color: #16a085;
+    color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.btn-edit {
+    background-color: #f1c40f;
+    color: black;
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.btn-delete {
+    background-color: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    gap: 5px;
+}
+
+.btn-save {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+    font-weight: bold;
+}
+
+.sidebar-btn {
+    background-color: #2980b9;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.sidebar-btn:hover {
+    background-color: #2471a3;
+}
+
+.btn-geo {
+    background-color: #d35400;
+}
+
+.btn-master {
+    background-color: #16a085;
+}
+
+.btn-logout {
+    background-color: #c0392b;
+    margin-top: auto;
+}
+
+/* --- FORM & INPUT --- */
+input,
+select,
+textarea {
+    margin-bottom: 8px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #bdc3c7;
+    border-radius: 4px;
+}
+
+input[readonly] {
+    background-color: #ecf0f5;
+    color: #7f8c8d;
+    cursor: not-allowed;
+}
+
+label {
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 2px;
+}
+
+/* --- LEAFLET UI OVERRIDES --- */
+.leaflet-control-layers {
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.leaflet-control-layers-list {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.leaflet-control-layers-toggle {
+    display: none !important;
+}
+
+/* --- LABEL, BADGE, & TABEL --- */
+.badge {
+    padding: 3px 6px;
+    color: white;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.bg-red {
+    background-color: #e74c3c;
+}
+
+.bg-orange {
+    background-color: #e67e22;
+}
+
+.bg-yellow {
+    background-color: #f1c40f;
+    color: black;
+}
+
+.bg-gray {
+    background-color: #95a5a6;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.history-table th {
+    background-color: #ecf0f5;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #bdc3c7;
+}
+
+.history-table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: top;
+}
+
+.stat-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dcdde1;
+    border-radius: 4px;
+    padding: 8px;
+    margin-top: 8px;
+    font-size: 0.9rem;
+}
+
+.setting-box {
+    background-color: #f4ecf7;
+    border: 1px solid #d2b4de;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* --- MODAL (JENDELA TENGAH) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 85%;
+    max-width: 900px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #2c3e50;
+}
+
+/* --- ANIMASI KEYFRAMES --- */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes blink-animation {
+    0% {
+        opacity: 1;
+        filter: drop-shadow(0 0 2px red);
+    }
+
+    50% {
+        opacity: 0.4;
+        filter: drop-shadow(0 0 10px red);
+    }
+
+    100% {
+        opacity: 1;
+        filter: drop-shadow(0 0 2px red);
+    }
+}
+
+.marker-darurat {
+    animation: blink-animation 1s infinite;
+}
