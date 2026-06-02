@@ -70,11 +70,11 @@ proverty_mapping/
 
 ---
 
-## Panduan Instalasi & Menjalankan Aplikasi
+## 🚀 Panduan Instalasi & Menjalankan Aplikasi
 
 1.  **Kloning Repositori:**
     ```
-    git clone https://github.com/alvinciputra028-art/proverty_mapping
+    git clone https://github.com/alvinciputra028-art/proverty_mapping.git
 
 2.  **Pindahkan ke Server Lokal:**
     Pindahkan folder proyek ke dalam direktori server lokal Anda (contoh: `htdocs` untuk XAMPP atau `www` untuk Laragon).
